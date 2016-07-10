@@ -1,4 +1,4 @@
-baseurl: /
+baseurl: ""
 markdown: kramdown
 safe: false
 excerpt_separator: "\n\n\n"
