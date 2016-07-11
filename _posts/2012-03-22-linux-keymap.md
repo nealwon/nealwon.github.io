@@ -5,6 +5,10 @@ category: linux
 excerpt: Linux 快捷键
 ---
 
+### {{ page.title }}
+
+***
+
 - CTRL+U    清除光标之前的内容
 - CTRL+Y    粘贴上次u的内容
 - CTRL+R    增量搜索命令,输入字符串后多次按组合键会继续上翻

@@ -7,6 +7,8 @@ excerpt: 记录关于telnet下操作memcached
 
 ## memcache在telnet下的命令操作
 
+***
+
 * **telnet请求命令格式**
 
 {% highlight shell %}
