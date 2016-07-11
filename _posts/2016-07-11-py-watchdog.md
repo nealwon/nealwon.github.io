@@ -3,6 +3,7 @@ layout: default
 title: 目录变化监测实时同步
 category: python
 excerpt: Watching directory changes,upload to server instantly
+tags: ["watchdog", "python"]
 ---
 
 ### {{ page.title }}

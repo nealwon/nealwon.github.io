@@ -3,6 +3,7 @@ layout: default
 title: memcache在telnet下的命令操作
 category: linux
 excerpt: 记录关于telnet下操作memcached
+tags: ["memcache", "telnet"]
 ---
 
 ## memcache在telnet下的命令操作

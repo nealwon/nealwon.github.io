@@ -3,6 +3,7 @@ layout: default
 title: Linux部分常用快捷键
 category: linux
 excerpt: Linux 快捷键
+tags: ["keymap", "linux"]
 ---
 
 ### {{ page.title }}

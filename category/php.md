@@ -9,9 +9,8 @@ category: php
         {% for post in category.last %}
 * [{{ post.title }} {{ post.date | date: "（%Y年%m月%d日）" }}]({{ site.baseurl }}{{ post.url }})
 
-<pre>
- {{ post.excerpt | strip_html }}
- </pre>
+> {{ post.excerpt | strip_html }}
+>
 
         {% endfor %}
     {% endif %}
