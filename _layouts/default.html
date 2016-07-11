@@ -3,19 +3,36 @@
   <head>
     <meta charset='utf-8'>
     <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Loading Bootstrap -->
+    <link href="/assets/flat-ui/css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI -->
+    <link href="/assets/flat-ui/css/flat-ui.min.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/assets/flat-ui/img/favicon.ico">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="/assets/flat-ui/js/vendor/html5shiv.js"></script>
+      <script src="/assets/flat-ui/js/vendor/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="/assets/flat-ui/js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/assets/flat-ui/js/vendor/video.js"></script>
+    <script src="/assets/flat-ui/js/flat-ui.min.js"></script>
+    <!-- highlight scripts -->
+    <link rel="stylesheet" href="/assets/highlightjs/styles/default.css">
+    <script src="/assets/highlightjs/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
   <body>
-    <header>
-    </header>
-
-    <aside>
-    </aside>
-
-    <article>
+    {% include menu.html %}
+    <div class="container">
 {{ content }}
-    </article>
+    </div>
 
-    <footer>
-    </footer>
   </body>
 </html>

@@ -4,21 +4,45 @@ title: 首页
 ---
 
 <ul class="post-list">
-    {% for post in site.posts %}
-        <li><a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a> ( {{ post.date | date: "%F" }} )
+    {% for post in paginator.posts %}
+        <li><a href="{{site.baseurl}}{{post.url}}"> {{ post.title }}  </a> ( {{ post.date | date: "%Y年%m月%d日" }} )<br>
+            <div class="content">{{ post.excerpt | strip_html }}</div>
         </li>
     {% endfor %}
 </ul>
-{% highlight python %}
-class Call:
-    def __init__(self):
-        pass
-    def setName(self, name):
-        self.name = name
-{% endhighlight %}
-
-{% highlight go %}
-import os
-var user UserInterface = UserInterface{Name: "nealwon", Password: "123456"}
-os.exec("hello")
-{% endhighlight %}
+<div>
+  <ul class="pagination pagination-minimal">
+    <li class="previous">
+      {% if paginator.page == 1 %}
+      <a class="fui-arrow-left"></a>
+      {% else %}
+        {% if paginator.previous_page == 1 %}
+            <a href="{{ site.baseurl }}" class="fui-arrow-left"></a>
+        {% else %}
+            <a href="{{ site.baseurl}}/article/{{ paginator.previous_page }}" class="fui-arrow-left"> </a>
+        {% endif %}
+      {% endif %}
+    </li>
+    {% for i in (1..paginator.total_pages) limit:9 offset:{{paginator.page-1}} %}
+            {% if paginator.page == i %}
+            <li class="active">
+            {% else %}
+            <li>
+            {% endif %}
+            {% if i == 1 %}
+            <a href="{{ site.baseurl }}/article">{{i}}</a>
+            {% else %}
+            <a href="{{ site.baseurl }}/article{{i}}">{{i}}</a>
+            {% endif %}
+            </li>
+    {% endfor %}
+    <li class="next">
+        {% if paginator.page ==  paginator.total_pages %}
+        <a class="fui-arrow-right"></a>
+        {% else %}
+        <a href="{{ site.baseurl }}/article/{{ paginator.next_page }}" class="fui-arrow-right"></a>
+        {% endif %}
+    </li>
+    <li class="disabled"><span>第{{ paginator.page }}页／共{{ paginator.total_pages }}页</span></li>
+  </ul>
+</div>
