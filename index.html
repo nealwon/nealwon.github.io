@@ -10,6 +10,9 @@ title: 首页
         </li>
     {% endfor %}
 </ul>
+
+
+{% if paginator.total_pages > 1 %}
 <div>
   <ul class="pagination pagination-minimal">
     <li class="previous">
@@ -17,9 +20,9 @@ title: 首页
       <a class="fui-arrow-left"></a>
       {% else %}
         {% if paginator.previous_page == 1 %}
-            <a href="{{ site.baseurl }}" class="fui-arrow-left"></a>
+            <a href="{{ site.baseurl }}/" class="fui-arrow-left"></a>
         {% else %}
-            <a href="{{ site.baseurl}}/article/{{ paginator.previous_page }}" class="fui-arrow-left"> </a>
+            <a href="{{ site.baseurl}}/p{{ paginator.previous_page }}" class="fui-arrow-left"> </a>
         {% endif %}
       {% endif %}
     </li>
@@ -30,9 +33,9 @@ title: 首页
             <li>
             {% endif %}
             {% if i == 1 %}
-            <a href="{{ site.baseurl }}/article">{{i}}</a>
+            <a href="{{ site.baseurl }}/">{{i}}</a>
             {% else %}
-            <a href="{{ site.baseurl }}/article{{i}}">{{i}}</a>
+            <a href="{{ site.baseurl }}/p{{i}}">{{i}}</a>
             {% endif %}
             </li>
     {% endfor %}
@@ -40,9 +43,10 @@ title: 首页
         {% if paginator.page ==  paginator.total_pages %}
         <a class="fui-arrow-right"></a>
         {% else %}
-        <a href="{{ site.baseurl }}/article/{{ paginator.next_page }}" class="fui-arrow-right"></a>
+        <a href="{{ site.baseurl }}/p{{ paginator.next_page }}" class="fui-arrow-right"></a>
         {% endif %}
     </li>
     <li class="disabled"><span>第{{ paginator.page }}页／共{{ paginator.total_pages }}页</span></li>
   </ul>
 </div>
+{% endif %}
