@@ -1,0 +1,73 @@
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+          </button>
+          <a class="navbar-brand" href="#">YF's</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active menu-list" activelist=""><a href="/">首页</a></li>
+            <li class="dropdown menu-list" activelist="php,python,go,c,html,javascript">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="menu-lang">编程语言<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">后端语言</li>
+                <li><a href="/category/php.html">PHP</a></li>
+                <li><a href="/category/python.html">Python</a></li>
+                <li><a href="/category/go.html">Go</a></li>
+                <li><a href="/category/c.html">C</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">前端语言</li>
+                <li><a href="/category/html.html">HTML</a></li>
+                <li><a href="/category/javascript.html">JavaScript</a></li>
+              </ul>
+            </li>
+            <li class="dropdown menu-list" activelist="kvm,docker,lxc">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="menu-virtual">虚拟化技术<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/category/kvm.html">KVM</a></li>
+                <li><a href="/category/docker.html">Docker</a></li>
+                <li><a href="/category/lxc.html">LXC</a></li>
+              </ul>
+            </li>
+            <li class="dropdown menu-list" activelist="linux,search">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="menu-other">运维<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/category/search.html">搜索引擎</a></li>
+                <li><a href="/category/linux.html">Linux</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown menu-list" activelist="">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="menu-other">五味杂陈<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/category/search.html">生活琐事儿</a></li>
+              </ul>
+            </li>
+
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/about">关于我</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+<script>
+$(function(){
+    var path = location.pathname;
+    $(".menu-list").each(function(i,v){
+        var al = $(v).attr('activelist').split(',');
+        if (al=='')return;
+        for(i=0;i<al.length;i++) {
+            if(path.indexOf(al[i]+'.html')>0 || path.indexOf('/'+al[i]+'/')==0) {
+                $(".menu-list").removeClass('active');
+                $(v).addClass('active');
+                break;
+            }
+        }
+    });
+});
+</script>
+
