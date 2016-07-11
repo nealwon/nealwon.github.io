@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PHP Articles
+title: Clang Articles
 category: c
 ---
 

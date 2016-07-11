@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Python Articles
-category: python
+title: Perl Articles
+category: perl
 ---
 
 {% for category in site.categories %}
@@ -9,8 +9,10 @@ category: python
         {% for post in category.last %}
 * [{{ post.title }} {{ post.date | date: "（%Y年%m月%d日）" }}]({{ site.baseurl }}{{ post.url }})
 
-> <span class="text-muted">{{ post.excerpt | strip_html }}</span>
->
+<pre>
+ {{ post.excerpt | strip_html }}
+ </pre>
+
         {% endfor %}
     {% endif %}
 {% endfor %}

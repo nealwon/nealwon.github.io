@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PHP Articles
+title: Javascript Articles
 category: javascript
 ---
 

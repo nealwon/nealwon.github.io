@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PHP Articles
+title: Golang Articles
 category: go
 ---
 

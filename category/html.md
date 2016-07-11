@@ -1,6 +1,6 @@
 ---
 layout: default
-title: PHP Articles
+title: HTML & HTML5 Articles
 category: html
 ---
 
